@@ -1,0 +1,31 @@
+[
+  {
+    "label": "inicio",
+    "focus": "btn-jogar"
+  },
+  {
+    "label": "primeiro-radio",
+    "focus": ""
+  },
+  {
+    "label": "um-tab-depois-radio",
+    "focus": "btn-continuar"
+  },
+  {
+    "label": "introducao",
+    "focus": "choice"
+  },
+  {
+    "label": "quarto-completo",
+    "focus": "choice"
+  },
+  {
+    "label": "selecao-140ms",
+    "style": {
+      "class": "choice is-selected",
+      "disabled": true,
+      "bg": "rgb(252, 250, 245)",
+      "color": "rgb(89, 97, 107)"
+    }
+  }
+]

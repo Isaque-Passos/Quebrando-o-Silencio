@@ -1,0 +1,5 @@
+- region "Mãe":
+  - heading "Mãe" [level=2]
+  - paragraph: Bom dia! Já está acordada?
+  - button "Mostrar texto"
+  - paragraph: Clique para mostrar a fala inteira.

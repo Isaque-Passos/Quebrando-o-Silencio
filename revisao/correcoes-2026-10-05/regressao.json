@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-05",
+  "tests": [
+    {
+      "name": "fluxo-feminino-0",
+      "status": "passed"
+    },
+    {
+      "name": "fluxo-feminino-1",
+      "status": "passed"
+    },
+    {
+      "name": "fluxo-masculino-0",
+      "status": "passed"
+    },
+    {
+      "name": "fluxo-masculino-1",
+      "status": "passed"
+    },
+    {
+      "name": "modal-durante-digitacao",
+      "status": "passed"
+    },
+    {
+      "name": "reinicio-transicao-20",
+      "status": "passed"
+    },
+    {
+      "name": "reinicio-transicao-170",
+      "status": "passed"
+    },
+    {
+      "name": "cancelar-modal-durante-transicao",
+      "status": "passed"
+    },
+    {
+      "name": "selecao-e-cliques-repetidos",
+      "status": "passed"
+    },
+    {
+      "name": "teclado",
+      "status": "passed"
+    },
+    {
+      "name": "texto-acessivel",
+      "status": "passed"
+    },
+    {
+      "name": "mobile",
+      "status": "passed"
+    },
+    {
+      "name": "validacao-e-texto-seguro",
+      "status": "passed"
+    }
+  ],
+  "consoleErrors": [],
+  "limitations": [
+    "Validação auditiva com leitor de tela não executada."
+  ],
+  "browser": "154.0.4258.53"
+}

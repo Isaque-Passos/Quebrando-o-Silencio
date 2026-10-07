@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-06T00:26:10.732Z",
+  "browser": "154.0.4258.53",
+  "scope": "Protótipo do capítulo 1: fluxo, regressões, teclado, visual responsivo e zoom real.",
+  "status": "approved-for-demonstration",
+  "regression": {
+    "date": "2026-10-05",
+    "tests": [
+      {
+        "name": "fluxo-feminino-0",
+        "status": "passed"
+      },
+      {
+        "name": "fluxo-feminino-1",
+        "status": "passed"
+      },
+      {
+        "name": "fluxo-masculino-0",
+        "status": "passed"
+      },
+      {
+        "name": "fluxo-masculino-1",
+        "status": "passed"
+      },
+      {
+        "name": "modal-durante-digitacao",
+        "status": "passed"
+      },
+      {
+        "name": "reinicio-transicao-20",
+        "status": "passed"
+      },
+      {
+        "name": "reinicio-transicao-170",
+        "status": "passed"
+      },
+      {
+        "name": "cancelar-modal-durante-transicao",
+        "status": "passed"
+      },
+      {
+        "name": "selecao-e-cliques-repetidos",
+        "status": "passed"
+      },
+      {
+        "name": "teclado",
+        "status": "passed"
+      },
+      {
+        "name": "texto-acessivel",
+        "status": "passed"
+      },
+      {
+        "name": "mobile",
+        "status": "passed"
+      },
+      {
+        "name": "validacao-e-texto-seguro",
+        "status": "passed"
+      }
+    ],
+    "consoleErrors": [],
+    "limitations": [
+      "Validação auditiva com leitor de tela não executada."
+    ],
+    "browser": "154.0.4258.53"
+  },
+  "realBrowserZoom": {
+    "date": "2026-10-05",
+    "method": "chrome.tabs.setZoom + chrome.tabs.getZoom em perfil temporário isolado",
+    "status": "passed",
+    "zoom": 2,
+    "metrics": {
+      "innerWidth": 683,
+      "innerHeight": 384,
+      "devicePixelRatio": 2
+    },
+    "checks": [
+      {
+        "name": "inicio",
+        "noHorizontalOverflow": true,
+        "controlsWithinDocument": true
+      },
+      {
+        "name": "identificacao",
+        "noHorizontalOverflow": true,
+        "controlsWithinDocument": true
+      },
+      {
+        "name": "introducao",
+        "noHorizontalOverflow": true,
+        "controlsWithinDocument": true
+      },
+      {
+        "name": "quarto",
+        "noHorizontalOverflow": true,
+        "controlsWithinDocument": true
+      },
+      {
+        "name": "escola",
+        "noHorizontalOverflow": true,
+        "controlsWithinDocument": true
+      }
+    ],
+    "browser": "154.0.4258.53"
+  },
+  "sourceHashes": {
+    "index.html": "baa084a5ed597b601f86ba65361853742abfdde5e07b1d4fd73aa480eb6b0324",
+    "game.js": "e94c63ed92e41e2372c238251da5ee4b2580deab046519d7dcebfc64823a1cf7",
+    "style.css": "f6ffab6393b0febf3c393893c8d4939888e9447cf4741f69dcf48b6a70c3e162"
+  },
+  "manualValidation": {
+    "screenReader": {
+      "status": "not-executed",
+      "note": "Texto completo conferido na árvore de acessibilidade; anúncio auditivo em leitor de tela não validado."
+    }
+  }
+}

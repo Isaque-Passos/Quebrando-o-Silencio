@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-05",
+  "method": "chrome.tabs.setZoom + chrome.tabs.getZoom em perfil temporário isolado",
+  "status": "passed",
+  "zoom": 2,
+  "metrics": {
+    "innerWidth": 683,
+    "innerHeight": 384,
+    "devicePixelRatio": 2
+  },
+  "checks": [
+    {
+      "name": "inicio",
+      "noHorizontalOverflow": true,
+      "controlsWithinDocument": true
+    },
+    {
+      "name": "identificacao",
+      "noHorizontalOverflow": true,
+      "controlsWithinDocument": true
+    },
+    {
+      "name": "introducao",
+      "noHorizontalOverflow": true,
+      "controlsWithinDocument": true
+    },
+    {
+      "name": "quarto",
+      "noHorizontalOverflow": true,
+      "controlsWithinDocument": true
+    },
+    {
+      "name": "escola",
+      "noHorizontalOverflow": true,
+      "controlsWithinDocument": true
+    }
+  ],
+  "browser": "154.0.4258.53"
+}

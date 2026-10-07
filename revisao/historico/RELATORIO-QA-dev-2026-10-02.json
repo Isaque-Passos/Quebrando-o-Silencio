@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-02T19:43:55.525Z",
+  "browser": "154.0.4258.48",
+  "consoleErrors": [],
+  "results": {
+    "QA-01": {
+      "passed": true,
+      "details": {
+        "title": "Uma história de escolhas — Capítulo 1",
+        "isBtnVisible": true,
+        "bgLoaded": true
+      }
+    },
+    "QA-02": {
+      "passed": true,
+      "details": {
+        "errTextEmpty": "Digite seu nome para começar.",
+        "errTextSpaces": "Digite seu nome para começar.",
+        "errTextNoGender": "Escolha uma opção para continuar."
+      }
+    },
+    "QA-03": {
+      "passed": true,
+      "details": {
+        "feminino": {
+          "playerTag": "Jogador: Helena d’Ávila",
+          "fala1Match": true,
+          "fala2Match": true,
+          "choicesMatch": true,
+          "fala3Match": true,
+          "speakerMatch": true,
+          "falaPaiMatch": true,
+          "fimMatch": true
+        },
+        "masculino": {
+          "playerTag": "Jogador: João-Victor",
+          "fala1Match": true,
+          "fala2Match": true,
+          "choicesMatch": true,
+          "fala3Match": true,
+          "speakerMatch": true,
+          "falaPaiMatch": true,
+          "fimMatch": true
+        }
+      }
+    },
+    "QA-07": {
+      "passed": true,
+      "details": "Roteiro 100% conferido com o PDF original e especificação."
+    },
+    "QA-04": {
+      "passed": true,
+      "details": "8/8 caminhos concluídos com sucesso."
+    },
+    "QA-05": {
+      "passed": true,
+      "details": {
+        "hadMostrarTexto": true,
+        "choicesAppeared": true,
+        "stillInScene": true
+      }
+    },
+    "QA-06": {
+      "passed": true,
+      "details": {
+        "speechInScene": "Está preparado para o primeiro dia?",
+        "correctlyStoppedAtNextScene": true
+      }
+    },
+    "QA-08": {
+      "passed": true,
+      "details": {
+        "modalVisible": true,
+        "modalHidden": true,
+        "dialogueStillVisible": true,
+        "backToStart": true,
+        "restartedDirectly": true
+      }
+    },
+    "QA-09": {
+      "passed": true,
+      "details": {
+        "focusedJogar": true,
+        "focusedName": true,
+        "focusedRadioFem": true,
+        "focusedContinuar": true,
+        "focusedIntroChoice": true,
+        "focusedComecar": true,
+        "isQuarto": true
+      }
+    },
+    "QA-10": {
+      "passed": true,
+      "details": {
+        "desktop": {
+          "noHScroll": true,
+          "speechVisible": true,
+          "choicesVisible": true,
+          "charVisible": true,
+          "charFaceVisible": true
+        },
+        "mobile": {
+          "noHScroll": true,
+          "speechVisible": true,
+          "choicesVisible": true,
+          "charVisible": true,
+          "charFaceVisible": true
+        },
+        "zoom200": {
+          "noHScroll": true,
+          "speechVisible": true,
+          "choicesVisible": true,
+          "charVisible": true,
+          "charFaceVisible": true
+        }
+      }
+    },
+    "QA-11": {
+      "passed": true,
+      "details": {
+        "speechText": "Bom dia! Já está acordada?",
+        "btnMostrarCount": 0,
+        "choicesCount": 2
+      }
+    },
+    "QA-12": {
+      "passed": true,
+      "details": {
+        "playerTagText": "Jogador: <script>alert(1)</script>",
+        "totalScripts": 1
+      }
+    },
+    "QA-13": {
+      "passed": true,
+      "details": {
+        "errorsCount": 0,
+        "runErrors": []
+      }
+    },
+    "QA-14": {
+      "passed": true,
+      "details": [
+        {
+          "url": "assets/cenario-quarto.png",
+          "ok": true,
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "url": "assets/cenario-escola.png",
+          "ok": true,
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "url": "assets/personagem-mae.png",
+          "ok": true,
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "assets/personagem-pai.png",
+          "ok": true,
+          "width": 1024,
+          "height": 1536
+        }
+      ]
+    },
+    "QA-15": {
+      "passed": true,
+      "details": {
+        "ariaLabel": "Bom dia! Já está acordada?",
+        "hasAriaHiddenSpan": "true",
+        "choiceAccessibleName1": "A\nAgora estou.",
+        "choiceAccessibleName2": "B\nBom dia, mãe."
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "checks": [
+    {
+      "test": "complete-flow",
+      "gender": "feminino",
+      "first": {
+        "state": {
+          "scene": "quarto_fala1",
+          "name": "Ana <teste>",
+          "gender": "feminino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "none",
+        "location": "Quarto",
+        "speech": "Bom dia! Já está acordada?",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      },
+      "second": {
+        "state": {
+          "scene": "quarto_fala2",
+          "name": "Ana <teste>",
+          "gender": "feminino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "none",
+        "location": "Quarto",
+        "speech": "Está preparada para o primeiro dia?",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      },
+      "school": {
+        "state": {
+          "scene": "escola_fala1",
+          "name": "Ana <teste>",
+          "gender": "feminino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "none",
+        "location": "Portão da escola",
+        "speech": "Boa aula filha. E não se esqueça: se acontecer alguma coisa, você pode contar para a gente.",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      },
+      "reset": {
+        "state": {
+          "scene": "inicio",
+          "name": "",
+          "gender": null,
+          "typing": false,
+          "transition": false
+        },
+        "focus": "paper-panel",
+        "modal": "none",
+        "location": "Uma história interativa",
+        "speech": "",
+        "panel": "UMA HISTÓRIA INTERATIVA\n\nUma história\nde escolhas.\n\nConheça pessoas, descubra lugares\ne decida o que fazer.\n\nJogar\n→\n\nCAPÍTULO 1",
+        "scrollY": 0,
+        "overflow": false
+      }
+    },
+    {
+      "test": "complete-flow",
+      "gender": "masculino",
+      "first": {
+        "state": {
+          "scene": "quarto_fala1",
+          "name": "Ana <teste>",
+          "gender": "masculino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "none",
+        "location": "Quarto",
+        "speech": "Bom dia! Já está acordado?",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      },
+      "second": {
+        "state": {
+          "scene": "quarto_fala2",
+          "name": "Ana <teste>",
+          "gender": "masculino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "none",
+        "location": "Quarto",
+        "speech": "Está preparado para o primeiro dia?",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      },
+      "school": {
+        "state": {
+          "scene": "escola_fala1",
+          "name": "Ana <teste>",
+          "gender": "masculino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "none",
+        "location": "Portão da escola",
+        "speech": "Boa aula filho. E não se esqueça: se acontecer alguma coisa, você pode contar para a gente.",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      },
+      "reset": {
+        "state": {
+          "scene": "inicio",
+          "name": "",
+          "gender": null,
+          "typing": false,
+          "transition": false
+        },
+        "focus": "paper-panel",
+        "modal": "none",
+        "location": "Uma história interativa",
+        "speech": "",
+        "panel": "UMA HISTÓRIA INTERATIVA\n\nUma história\nde escolhas.\n\nConheça pessoas, descubra lugares\ne decida o que fazer.\n\nJogar\n→\n\nCAPÍTULO 1",
+        "scrollY": 0,
+        "overflow": false
+      }
+    },
+    {
+      "test": "modal-during-typing",
+      "before": {
+        "state": {
+          "scene": "quarto_fala1",
+          "name": "Ana <teste>",
+          "gender": "feminino",
+          "typing": true,
+          "transition": false
+        },
+        "focus": "btn-cancelar-reinicio",
+        "modal": "grid",
+        "location": "Quarto",
+        "speech": "Bom d",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      },
+      "after": {
+        "state": {
+          "scene": "quarto_fala1",
+          "name": "Ana <teste>",
+          "gender": "feminino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "grid",
+        "location": "Quarto",
+        "speech": "Bom dia! Já está acordada?",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      },
+      "escape": {
+        "state": {
+          "scene": "quarto_fala1",
+          "name": "Ana <teste>",
+          "gender": "feminino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "grid",
+        "location": "Quarto",
+        "speech": "Bom dia! Já está acordada?",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      }
+    },
+    {
+      "test": "restart-during-choice-delay",
+      "snapshot": {
+        "state": {
+          "scene": "quarto_fala2",
+          "name": "",
+          "gender": null,
+          "typing": true,
+          "transition": false
+        },
+        "focus": "dialogue-box",
+        "modal": "none",
+        "location": "Quarto",
+        "speech": "Está preparado para o pr",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      }
+    },
+    {
+      "test": "speech-accessibility",
+      "snapshot": "- region \"Diálogo\":\n  - heading \"Mãe\" [level=2]\n  - paragraph\n  - button \"Agora estou.\"\n  - button \"Bom dia, mãe.\"\n  - paragraph: Sua vez de escolher.",
+      "focus": "choice"
+    },
+    {
+      "test": "choice-feedback",
+      "style": {
+        "disabled": true,
+        "selected": true,
+        "background": "rgb(255, 253, 248)",
+        "color": "rgb(89, 97, 107)"
+      }
+    },
+    {
+      "test": "mobile-school",
+      "snapshot": {
+        "state": {
+          "scene": "escola_fala1",
+          "name": "Ana <teste>",
+          "gender": "feminino",
+          "typing": false,
+          "transition": false
+        },
+        "focus": "choice",
+        "modal": "none",
+        "location": "Portão da escola",
+        "speech": "Boa aula filha. E não se esqueça: se acontecer alguma coisa, você pode contar para a gente.",
+        "panel": "",
+        "scrollY": 0,
+        "overflow": false
+      }
+    },
+    {
+      "test": "validation",
+      "empty": "Digite seu nome para começar.",
+      "spaces": "Digite seu nome para começar.",
+      "missingGender": "Escolha uma opção para continuar.",
+      "tag": "JOGADOR: <IMG SRC=X ONERROR=ALERT(1)>",
+      "injectedImages": 0
+    }
+  ],
+  "errors": [],
+  "browser": "154.0.4258.48"
+}

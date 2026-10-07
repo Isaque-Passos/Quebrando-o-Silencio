@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uma história de escolhas — Capítulo 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stage" id="stage" aria-label="Composição da tela do jogo">
+    <!-- Imagem de fundo do cenário -->
+    <img class="background" id="scene-bg" src="assets/cenario-escola.png" alt="">
+
+    <!-- Barra superior de identificação do local e controle de reinício -->
+    <header class="scene-bar" id="scene-bar">
+      <div class="scene-label">
+        <small>CAPÍTULO 1</small>
+        <strong id="scene-location">Uma história interativa</strong>
+      </div>
+      <button type="button" class="quiet" id="btn-reiniciar" style="display: none;">Reiniciar</button>
+    </header>
+
+    <!-- Personagem em destaque -->
+    <img class="character" id="scene-char" src="assets/personagem-mae.png" alt="" style="display: none;">
+
+    <!-- Caixa de diálogo com interlocutor, fala e escolhas -->
+    <section class="dialogue" id="dialogue-box" aria-labelledby="dialogue-speaker" aria-describedby="speech-accessible" tabindex="-1" style="display: none;">
+      <h2 class="speaker" id="dialogue-speaker">Mãe</h2>
+      <p class="speech" id="dialogue-speech">
+        <span class="sr-only" id="speech-accessible"></span>
+        <span aria-hidden="true" id="speech-text"></span><span class="reveal-caret" id="speech-caret" aria-hidden="true">▌</span>
+      </p>
+      <div id="dialogue-interactive"></div>
+      <p class="hint" id="dialogue-hint">Sua vez de escolher.</p>
+    </section>
+
+    <!-- Container dos painéis de tela (Início, Identificação, Introdução, Abertura e Fim) -->
+    <div id="panel-container"></div>
+
+    <!-- Modal de confirmação de reinício -->
+    <div class="overlay" id="restart-modal" role="dialog" aria-modal="true" aria-labelledby="restart-title" style="display: none;">
+      <section class="confirmation">
+        <h1 class="panel-title" id="restart-title">Recomeçar o capítulo?</h1>
+        <p class="lead">Você vai voltar ao início.</p>
+        <div class="actions">
+          <button class="quiet" type="button" id="btn-cancelar-reinicio">Continuar jogando</button>
+          <button class="primary" type="button" id="btn-confirmar-reinicio">Recomeçar</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

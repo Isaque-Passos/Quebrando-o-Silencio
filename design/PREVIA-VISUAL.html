@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capítulo 1 — Referência visual</title>
+  <link rel="stylesheet" href="interface.css">
+</head>
+<body>
+  <header class="preview-bar">
+    <p><strong>Capítulo 1 · Referência visual</strong>Prévia de design. Os controles dentro da cena são ilustrativos.</p>
+    <label for="screen">Visualizar tela
+      <select id="screen">
+        <option value="inicio">01 · Tela inicial</option>
+        <option value="identificacao">02 · Identificação</option>
+        <option value="erro">02b · Campo com erro</option>
+        <option value="introducao">03 · Introdução</option>
+        <option value="abertura">04 · Abertura do capítulo</option>
+        <option value="quarto" selected>05 · Quarto / mãe</option>
+        <option value="revelando">05b · Texto aparecendo</option>
+        <option value="escolha">05c · Resposta selecionada</option>
+        <option value="quarto2">06 · Segundo diálogo</option>
+        <option value="quarto3">07 · Avançar diálogo</option>
+        <option value="escola">08 · Escola / pai</option>
+        <option value="fim">09 · Fim da demonstração</option>
+        <option value="reiniciar">10 · Confirmar reinício</option>
+      </select>
+    </label>
+  </header>
+  <main class="stage" id="stage" aria-label="Composição da tela do jogo"></main>
+  <footer class="preview-footer">Direção de arte e imagens: Codex · HTML/CSS de referência para o desenvolvedor. Nome do jogo provisório. <a href="GUIA-VISUAL.md">Abrir guia visual</a>.</footer>
+  <script src="previa.js"></script>
+</body>
+</html>

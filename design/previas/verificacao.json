@@ -1,0 +1,216 @@
+{
+  "browser": "154.0.4258.48",
+  "checks": [
+    {
+      "width": 1366,
+      "screen": "inicio",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "identificacao",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "erro",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "introducao",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "abertura",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "quarto",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "revelando",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "escolha",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "quarto2",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "quarto3",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "escola",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "fim",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 1366,
+      "screen": "reiniciar",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 788,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "inicio",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "identificacao",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "erro",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "introducao",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "abertura",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "quarto",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "revelando",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "escolha",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "quarto2",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "quarto3",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "escola",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "fim",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    },
+    {
+      "width": 390,
+      "screen": "reiniciar",
+      "overflow": false,
+      "brokenImages": [],
+      "stageHeight": 720,
+      "clippedControls": []
+    }
+  ],
+  "navigationWorks": true,
+  "narrowLayout": true,
+  "errors": []
+}
