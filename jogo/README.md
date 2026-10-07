@@ -4,7 +4,13 @@
 
 Extraia o pacote e abra `index.html` no navegador. Mantenha os arquivos e a pasta `assets` juntos. O jogo funciona offline, sem instalação ou servidor. O nome do jogo é provisório.
 
-## Jogar
+## Publicação na Vercel
+
+O arquivo `vercel.json` na raiz do repositório publica a pasta `jogo` no endereço principal do site. Na Vercel, mantenha **Root Directory** na raiz do repositório e **Framework Preset** como **Other**. O jogo é estático e não precisa de instalação de pacotes ou comando de build. A configuração versionada define **Output Directory** como `jogo`.
+
+Link público: https://quebrando-o-silencio.vercel.app/
+
+## Como jogar
 
 Clique em Jogar, informe um nome, escolha Feminino ou Masculino e avance. Durante as falas, clique na caixa ou em Mostrar texto para revelar o restante; depois escolha sua resposta. Reiniciar abre uma confirmação. Jogar novamente, no final, começa uma nova sessão. Recarregar a página também volta ao início.
 
