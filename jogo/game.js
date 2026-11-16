@@ -82,6 +82,9 @@ const dom = {
   speechText: document.getElementById('speech-text'),
   speechAccessible: document.getElementById('speech-accessible'),
   speechCaret: document.getElementById('speech-caret'),
+  playerPortrait: document.getElementById('player-portrait'),
+  playerPortraitImg: document.getElementById('player-portrait-img'),
+  playerPortraitName: document.getElementById('player-portrait-name'),
   dialogueInteractive: document.getElementById('dialogue-interactive'),
   dialogueHint: document.getElementById('dialogue-hint'),
   panelContainer: document.getElementById('panel-container'),
@@ -211,6 +214,9 @@ const SCENES = {
     render(container) {
       container.innerHTML = `
         <section class="paper-panel narration" tabindex="-1">
+          <div class="player-portrait" id="intro-player-portrait" style="display: none;">
+            <img id="intro-player-portrait-img" src="" alt="">
+          </div>
           <p class="eyebrow" id="intro-player-tag"></p>
           <h1 class="panel-title">Esta é uma história interativa.</h1>
           <p class="lead">Durante o jogo, você vai acompanhar a rotina de um estudante, conhecer pessoas, explorar diferentes lugares e passar por situações do dia a dia.</p>
@@ -226,6 +232,12 @@ const SCENES = {
       // Inserção estrita de texto seguro sem interpretar HTML
       const playerTag = container.querySelector('#intro-player-tag');
       playerTag.textContent = `Jogador: ${state.playerName}`;
+      if (typeof getPlayerPortrait === 'function' && state.gender) {
+        const portraitWrap = container.querySelector('#intro-player-portrait');
+        const portraitImg = container.querySelector('#intro-player-portrait-img');
+        portraitImg.src = getPlayerPortrait({});
+        portraitWrap.style.display = 'flex';
+      }
 
       const choiceBtns = container.querySelectorAll('.choice');
       choiceBtns.forEach(btn => {
@@ -250,6 +262,7 @@ const SCENES = {
         <section class="paper-panel center-panel" tabindex="-1">
           <h1 class="eyebrow">Capítulo</h1>
           <p class="chapter-number">1</p>
+          <p class="lead">O Preço de Não Pertencer</p>
           <button type="button" class="primary" id="btn-comecar">Começar<span aria-hidden="true">→</span></button>
         </section>
       `;
@@ -518,6 +531,7 @@ function renderScene(scene) {
   if (scene.type === 'panel') {
     dom.sceneChar.style.display = 'none';
     dom.dialogueBox.style.display = 'none';
+    if (dom.playerPortrait) dom.playerPortrait.style.display = 'none';
     dom.dialogueInteractive.innerHTML = '';
     dom.speechText.textContent = '';
     dom.speechAccessible.textContent = '';
@@ -531,6 +545,19 @@ function renderScene(scene) {
     if (scene.character) dom.sceneChar.src = scene.character;
     dom.sceneChar.alt = scene.characterAlt || '';
     dom.sceneChar.style.display = scene.character ? 'block' : 'none';
+
+    // Atualiza retrato do protagonista com reação emocional
+    if (dom.playerPortrait) {
+      const portraitSrc = typeof getPlayerPortrait === 'function' && state.gender ? getPlayerPortrait(scene) : '';
+      if (portraitSrc) {
+        dom.playerPortraitImg.src = portraitSrc;
+        dom.playerPortraitImg.alt = scene.playerEmotion ? `Expressão: ${scene.playerEmotion}` : '';
+        dom.playerPortraitName.textContent = state.playerName;
+        dom.playerPortrait.style.display = 'flex';
+      } else {
+        dom.playerPortrait.style.display = 'none';
+      }
+    }
 
     // Configura e exibe caixa de diálogo
     dom.dialogueSpeaker.textContent = scene.speaker;
@@ -608,6 +635,7 @@ function resetGame() {
   dom.speechAccessible.textContent = '';
   dom.dialogueBox.style.display = 'none';
   dom.sceneChar.style.display = 'none';
+  if (dom.playerPortrait) dom.playerPortrait.style.display = 'none';
 
   closeRestartModal(false);
   dom.sceneBg.style.opacity = '1';
