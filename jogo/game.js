@@ -100,12 +100,12 @@ const SCENES = {
     hasRestart: false,
     render(container) {
       container.innerHTML = `
-        <section class="paper-panel" tabindex="-1">
-          <p class="eyebrow">Uma história interativa</p>
-          <h1 class="game-title">Uma história<br>de <em>escolhas.</em></h1>
-          <p class="lead">Conheça pessoas, descubra lugares<br>e decida o que fazer.</p>
+        <section class="paper-panel start-panel" tabindex="-1">
+          <p class="eyebrow">Story Studios apresenta…</p>
+          <h1 class="game-title">Quebrando<br>o silêncio</h1>
+
           <button type="button" class="primary" id="btn-jogar">Jogar<span aria-hidden="true">→</span></button>
-          <p class="chapter-note">CAPÍTULO 1</p>
+
         </section>
       `;
       const btnJogar = container.querySelector('#btn-jogar');
@@ -126,8 +126,8 @@ const SCENES = {
     render(container) {
       container.innerHTML = `
         <section class="paper-panel" tabindex="-1">
-          <p class="eyebrow">Uma história de escolhas</p>
-          <h1 class="panel-title" id="ident-title">Antes de começar...</h1>
+
+          <h1 class="panel-title" id="ident-title">Antes de começar</h1>
           <label class="field-label" for="player-name">Nome</label>
           <input class="name-field" id="player-name" type="text" maxlength="30" placeholder="Como você se chama?" autocomplete="off">
           <p class="error-message" id="ident-error" role="alert" style="display: none;"></p>
@@ -187,7 +187,7 @@ const SCENES = {
 
         state.playerName = trimmed;
         state.gender = selectedRadio.value;
-        goToScene('introducao');
+        goToScene('capitulos');
       }
 
       btnContinuar.addEventListener('click', validateAndSubmit);
@@ -355,8 +355,8 @@ const SCENES = {
       container.innerHTML = `
         <section class="paper-panel center-panel" tabindex="-1">
           <p class="eyebrow">Capítulo 1</p>
-          <h1 class="panel-title">Fim do protótipo<br>do capítulo 1</h1>
-          <p class="lead">Os próximos capítulos estão em desenvolvimento.</p>
+          <h1 class="panel-title">Fim do capítulo 1</h1>
+          <p class="lead">Era só uma brincadeira</p>
           <button type="button" class="primary" id="btn-jogar-novamente">Jogar novamente<span aria-hidden="true">→</span></button>
         </section>
       `;
@@ -397,11 +397,12 @@ function renderDialogueInteractive(scene) {
       <div class="choices">
         ${scene.choices.map((c, i) => `
           <button type="button" class="choice" data-next="${c.next}">
-            <span class="letter" aria-hidden="true">${i === 0 ? 'A' : 'B'}</span>${escapeHtml(c.text(state.gender))}
+            <span class="letter" aria-hidden="true">${String.fromCharCode(65 + i)}</span>${escapeHtml(c.text(state.gender))}
           </button>
         `).join('')}
       </div>
     `;
+
 
     const choiceBtns = dom.dialogueInteractive.querySelectorAll('.choice');
     choiceBtns.forEach(btn => {
@@ -504,7 +505,9 @@ function renderScene(scene) {
   window.scrollTo(0, 0);
 
   // Atualiza identificação de local e controle de reinício
-  dom.sceneLocation.textContent = scene.location;
+  document.querySelector('.scene-bar').style.display = ['inicio', 'identificacao', 'capitulos'].includes(scene.id) ? 'none' : '';
+ dom.sceneLocation.textContent = 'O Preço de Não Pertencer';
+ dom.dialogueBox.dataset.location = scene.location;
   dom.btnReiniciar.style.display = scene.hasRestart ? 'inline-block' : 'none';
 
   // Atualiza fundo
@@ -525,9 +528,9 @@ function renderScene(scene) {
     dom.panelContainer.innerHTML = '';
 
     // Atualiza personagem
-    dom.sceneChar.src = scene.character;
-    dom.sceneChar.alt = scene.characterAlt;
-    dom.sceneChar.style.display = 'block';
+    if (scene.character) dom.sceneChar.src = scene.character;
+    dom.sceneChar.alt = scene.characterAlt || '';
+    dom.sceneChar.style.display = scene.character ? 'block' : 'none';
 
     // Configura e exibe caixa de diálogo
     dom.dialogueSpeaker.textContent = scene.speaker;

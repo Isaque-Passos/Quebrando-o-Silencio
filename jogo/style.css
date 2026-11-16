@@ -597,3 +597,43 @@ input[type='radio'] {
     scroll-behavior: auto !important;
   }
 }
+
+/* Capítulos e diálogo: acabamento discreto, preservando as artes. */
+.chapter-list {display:grid;gap:12px;margin-top:24px}
+.chapter-card {display:grid;gap:7px;text-align:left;padding:16px 20px;border:1px solid #aaa49b;background:#fffdf7;color:#272727;border-radius:8px;font:inherit;cursor:pointer}
+.chapter-card strong {font-size:20px}.chapter-card small,.chapter-card span {font-size:13px}
+.chapter-card:disabled {color:#666;background:#e5e2dc;border-style:dashed;cursor:not-allowed}
+.chapter-card:not(:disabled):hover {border-color:#345c8c;background:#edf2f7}
+.chapter-card:focus-visible {outline:3px solid #345c8c;outline-offset:3px}
+.dialogue {border-radius:10px;box-shadow:0 4px 20px #0002}
+.dialogue::before {content:attr(data-location);display:block;font-size:13px;color:#625c55;margin-bottom:10px}
+.dialogue .choices {grid-template-columns:1fr}
+.choice {border-radius:6px}
+.chapter-panel {max-height:calc(100dvh - 48px);overflow:auto}
+
+/* Todas as caixas usam o centro do palco, inclusive durante as falas. */
+.stage {width:100%;height:auto;min-height:100svh;display:grid;align-items:center;justify-items:center;overflow:visible;padding:110px 24px}
+#panel-container {width:100%;max-width:570px}
+#panel-container .paper-panel {position:relative;inset:auto;transform:none;margin:0 auto;width:100%;max-height:none;overflow:visible;text-align:center}
+.stage:has(.start-panel), .stage:has(.chapter-panel) {padding:32px 24px}
+.dialogue {position:relative;inset:auto;transform:none;margin:0;width:min(900px,100%);text-align:center;align-self:center;justify-self:center}
+.dialogue .speaker {left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 32px)}
+.dialogue .choice {justify-content:center;text-align:center}
+.chapter-card,.confirmation {text-align:center}
+.radios,.actions {justify-content:center}
+.scene-bar {left:24px;right:24px;justify-content:center}
+.scene-label {text-align:center;max-width:calc(100% - 190px)}
+.scene-bar .quiet {position:absolute;right:0}
+.overlay {min-height:100%;place-items:center}
+@media(max-width:700px){.stage{padding:120px 16px 48px}.scene-bar{left:16px;right:16px}.scene-label{max-width:calc(100% - 140px)}.dialogue{padding:32px 18px 20px}.character{position:absolute}.paper-panel{padding:28px 22px}}
+
+.player-portrait {display:flex;align-items:center;justify-content:center;gap:12px;margin:12px auto;font-weight:bold}
+.player-portrait img {width:72px;height:80px;object-fit:cover;object-position:top;border-radius:12px;background:#e7e0d4}
+
+/* Falas na base do cenário; menus continuam centralizados. */
+.stage:has(#dialogue-box[style*="display: block"]) {padding:110px 24px 24px;align-items:end}
+.stage #dialogue-box {align-self:end;margin:0 auto;position:relative;inset:auto;transform:none}
+@media(max-width:700px){
+ .stage:has(#dialogue-box[style*="display: block"]) {padding:160px 16px 16px}
+ .stage #dialogue-box {margin:0 auto}
+}
