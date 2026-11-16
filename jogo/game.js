@@ -369,7 +369,7 @@ const SCENES = {
         <section class="paper-panel center-panel" tabindex="-1">
           <p class="eyebrow">Capítulo 1</p>
           <h1 class="panel-title">Fim do capítulo 1</h1>
-          <p class="lead">Era só uma brincadeira</p>
+          <p class="lead">O Preço de Não Pertencer</p>
           <button type="button" class="primary" id="btn-jogar-novamente">Jogar novamente<span aria-hidden="true">→</span></button>
         </section>
       `;
