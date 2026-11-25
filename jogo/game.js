@@ -505,6 +505,29 @@ dom.dialogueBox.addEventListener('click', (e) => {
   }
 });
 
+// Cada imagem só pode aparecer após decodificar a solicitação da sessão atual.
+// Trocar apenas src permite ao navegador manter os pixels do personagem anterior.
+const imageRequests = new WeakMap();
+function setSceneImage(image, src, alt = '') {
+  if (!image) return;
+  const request = { session: state.session };
+  imageRequests.set(image, request);
+  image.style.visibility = 'hidden';
+  image.alt = alt;
+  if (!src) {
+    image.removeAttribute('src');
+    return;
+  }
+  image.src = src;
+  image.decode().then(() => {
+    if (imageRequests.get(image) === request && request.session === state.session && image.isConnected) {
+      image.style.visibility = 'visible';
+    }
+  }).catch(() => {
+    // Imagem cancelada ou indisponível permanece oculta, sem exibir outro sprite.
+  });
+}
+
 // Renderização central de cenas
 function renderScene(scene) {
   // Limpa estados de digitação anteriores
@@ -524,11 +547,11 @@ function renderScene(scene) {
   dom.btnReiniciar.style.display = scene.hasRestart ? 'inline-block' : 'none';
 
   // Atualiza fundo
-  if (dom.sceneBg.getAttribute('src') !== scene.background) {
-    dom.sceneBg.src = scene.background;
-  }
+  setSceneImage(dom.sceneBg, scene.background);
 
   if (scene.type === 'panel') {
+    setSceneImage(dom.sceneChar, null);
+    setSceneImage(dom.playerPortraitImg, null);
     dom.sceneChar.style.display = 'none';
     dom.dialogueBox.style.display = 'none';
     if (dom.playerPortrait) dom.playerPortrait.style.display = 'none';
@@ -542,19 +565,18 @@ function renderScene(scene) {
     dom.panelContainer.innerHTML = '';
 
     // Atualiza personagem
-    if (scene.character) dom.sceneChar.src = scene.character;
-    dom.sceneChar.alt = scene.characterAlt || '';
+    setSceneImage(dom.sceneChar, scene.character, scene.characterAlt || '');
     dom.sceneChar.style.display = scene.character ? 'block' : 'none';
 
     // Atualiza retrato do protagonista com reação emocional
     if (dom.playerPortrait) {
       const portraitSrc = typeof getPlayerPortrait === 'function' && state.gender ? getPlayerPortrait(scene) : '';
       if (portraitSrc) {
-        dom.playerPortraitImg.src = portraitSrc;
-        dom.playerPortraitImg.alt = scene.playerEmotion ? `Expressão: ${scene.playerEmotion}` : '';
+        setSceneImage(dom.playerPortraitImg, portraitSrc, scene.playerEmotion ? `Expressão: ${scene.playerEmotion}` : '');
         dom.playerPortraitName.textContent = state.playerName;
         dom.playerPortrait.style.display = 'flex';
       } else {
+        setSceneImage(dom.playerPortraitImg, null);
         dom.playerPortrait.style.display = 'none';
       }
     }
@@ -639,7 +661,8 @@ function resetGame() {
 
   closeRestartModal(false);
   dom.sceneBg.style.opacity = '1';
-  goToScene('inicio');
+  state.currentSceneId = 'inicio';
+  renderScene(SCENES.inicio);
 }
 
 dom.btnReiniciar.addEventListener('click', () => {
